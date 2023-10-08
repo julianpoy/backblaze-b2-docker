@@ -1,9 +1,9 @@
-FROM alpine
+FROM debian
 
-RUN apk update
+RUN apt-get update
 
-RUN apk add backblaze-b2
+RUN apt-get install -y backblaze-b2
 
-RUN backblaze-b2 --version
+RUN backblaze-b2 version
 
-CMD ["b2", "--version"]
+CMD ["backblaze-b2", "version"]
